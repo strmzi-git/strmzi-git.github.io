@@ -1,13 +1,5 @@
 const info = [
   {
-    question: "What's your name",
-    answer: "Timo",
-  },
-  {
-    question: "How old are you?",
-    answer: "Timo",
-  },
-  {
     question: "What prior education have you completed?",
     answer: "International Baccalaureate (IB)",
   },
@@ -71,3 +63,4 @@ const renderHtmlElementsToPage = function () {
 };
 
 renderHtmlElementsToPage();
+
