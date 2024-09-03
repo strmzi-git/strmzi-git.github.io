@@ -10,11 +10,11 @@ const info = [
   {
     question: "What are you strengths?",
     answer:
-      "Self-learning. Can find an answer to most questions I come up with. Good at working alone without external intervention. Communication (if I feel like it)",
+      "Self-learning. Can find an answer to most questions I come up with. Good at working alone without external intervention. Communication. Procrastination",
   },
   {
     question: "What are your weaknesses",
-    answer: "Procrastination, public speaking, design work (clearly)",
+    answer: "Public speaking, design work (clearly)",
   },
   {
     question: "Do you play any sports?",
