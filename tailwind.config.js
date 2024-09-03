@@ -1,9 +1,35 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html'],
+  content: ["./index.html"],
   theme: {
     extend: {},
   },
+  safelist: [
+    "text-xl",
+    "text-2xl",
+    "text-3xl",
+    "text-lg",
+    "font-semibold",
+    "font-black",
+    "font-bold",
+    "text-4xl",
+    "text-5xl",
+    "text-6xl",
+    "w-[250px]",
+    "h-[2px]",
+    "bg-gradient-to-r",
+    "from-pink-500",
+    "via-red-500",
+    "to-yellow-500",
+    "p-4",
+    "mb-2",
+    "opacity-70",
+    "via-30%",
+    "to-80%",
+    "text-lg",
+    "sm:text-xl",
+    "md:text-2xl",
+    // "lg:text-xl",
+  ],
   plugins: [],
-}
-
+};
