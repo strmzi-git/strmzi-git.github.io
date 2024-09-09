@@ -14,7 +14,6 @@ const renderNavbar = function () {
         location: { pathname },
       },
     } = e;
-    console.log("Pathname:", pathname)
     // Create unordered list elements
     const ul = document.createElement("ul");
     const ulClasslist = "flex items-center gap-4 justify-center";
@@ -62,29 +61,4 @@ const renderNavbar = function () {
   });
 };
 
-{
-  /* <ul class="flex items-center gap-4 justify-center">
-        <li
-          class="w-auto cursor-pointer px-4 py-3 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-bold rounded-2xl"
-        >
-          <a href="index.html">Home</a>
-        </li>
-        <li class="w-auto cursor-pointer relative px-4 py-3 font-bold rounded-2xl group overflow-hidden ">
-          <div class="w-full z-10 absolute top-0 left-[-100%] h-full group-hover:left-[0] duration-300 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 "></div>
-          <a class="z-50 relative group-hover:text-white duration-300" href="profile.html">Profile</a>
-        </li>
-        <li class="w-auto cursor-pointer relative px-4 py-3 font-bold rounded-2xl group overflow-hidden ">
-          <div class="w-full z-10 absolute top-0 left-[-100%] h-full group-hover:left-[0] duration-300 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 "></div>
-          <a class="z-50 relative group-hover:text-white duration-300" href="dashboard.html">Dashboard</a>
-        </li>
-        <li class="w-auto cursor-pointer relative px-4 py-3 font-bold rounded-2xl group overflow-hidden ">
-          <div class="w-full z-10 absolute top-0 left-[-100%] h-full group-hover:left-[0] duration-300 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 "></div>
-          <a class="z-50 relative group-hover:text-white duration-300" href="faq.html">FAQ</a>
-        </li>
-        <li class="w-auto cursor-pointer relative px-4 py-3 font-bold rounded-2xl group overflow-hidden ">
-          <div class="w-full z-10 absolute top-0 left-[-100%] h-full group-hover:left-[0] duration-300 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 "></div>
-          <a class="z-50 relative group-hover:text-white duration-300" href="blog.html">Blog</a>
-        </li>
-      </ul> */
-}
 renderNavbar();

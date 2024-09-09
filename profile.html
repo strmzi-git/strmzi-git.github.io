@@ -1,3 +1,5 @@
+<!-- Make an animated background where squares randomly light up -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,34 +10,84 @@
     <!-- tailwindcss output file -->
     <link href="../public/dist/output.css" rel="stylesheet" />
     <meta name="description" content="Timo's profile page" />
+    <script
+      src="https://kit.fontawesome.com/056a0464c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div id="mainContainer" class="flex w-[120%] opacity-50 h-[110%] flex-wrap fixed top-[-25px] left-[-25px] z-0 overflow-hidden"></div>
     <!-- Navigation bar -->
-    <nav id="navbar" class="my-4 mx-auto w-[500px]">
-    </nav>
-    <main class="mx-auto h-auto p-8">
-    <!-- image container -->
-     <img class="w-[250px] h-[250px] rounded-full mx-auto mb-4" src="./public/images/Profile.png" alt="Digital profile artwork">
-    <!-- Header container -->
+    <nav id="navbar" class="my-4 mx-auto w-[500px]"></nav>
+    <main id="mainContent" class="mx-auto p-8 relative z-20">
+      <!-- Header container -->
       <div class="flex flex-col items-center gap-4">
         <div
           class="bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
         >
-          <h1 class="text-transparent text-6xl font-black text-center">Get To Know Timo</h1>
+          <h1 class="text-transparent text-6xl font-black text-center">
+            Get To Know Timo
+          </h1>
         </div>
       </div>
-      <div class="max-w-[700px] mt-8 p-2 bg-gradient-to-r from-yellow-500 to-pink-500 via-red-500 mx-auto rounded-md"  ">
-          <!-- Container for Q&A question -->
+      <!-- image and information container -->
+      <img
+        class="w-[250px] h-[250px] rounded-full mx-auto mb-4"
+        src="./public/images/Profile.png"
+        alt="Digital profile artwork"
+      />
+      <div
+        class="p-2 max-w-[700px] bg-gradient-to-r from-yellow-500 to-pink-500 via-red-500 mx-auto rounded-md"
+      >
+        <!-- Container for Q&A question -->
         <div
           id="content-container"
           class="max-w-[700px] rounded-md flex flex-col gap-4 p-4 bg-white"
-        ></div>
+        >
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Exercitationem, qui ratione. Non esse vel architecto hic iure, sed
+            sequi in corrupti exercitationem explicabo officiis error fugiat
+            totam perferendis praesentium animi!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quas
+            et, labore dicta quod nisi ab quae magni ipsa, rerum mollitia modi.
+            Unde harum quis corporis quaerat cum ut minima.
+          </p>
+          <!-- <h3 class="font-bold text-xl mt-2">Characteristics</h3>
+          <ul class="list-none">
+            <li>Handsome</li>
+            <li>Muscular</li>
+            <li>Intelligent</li>
+          </ul> -->
+        </div>
       </div>
     </main>
-    <!-- <footer class="w-full pb-2 flex items-center justify-center gap-1">
-      <p class="">Footer placeholder</p>
-    </footer> -->
-    <script src="./scripts/scripts.js"></script>
+
+    <!-- Page footer -->
+    <footer id="footerContainer"></footer>
+
+  <!-- ---------- Javascript scripts ---------- -->
+    <!-- Footer script -->
+    <script src="./scripts/loadFooter.js"></script>
+    <!-- Navbar script -->
     <script src="./scripts/loadNavbar.js"></script>
+    <!-- Icon package scripts -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- background animation scripts -->
+    <script src="./scripts/backgroundAnimation.js"></script>
+
   </body>
 </html>
