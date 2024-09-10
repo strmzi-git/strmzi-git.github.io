@@ -13,7 +13,7 @@ const generateBackgroundTiles = function () {
   const area = screenHeight * screenWidth;
   const squareArea = 75 * 75;
   const possibleSquares = Math.floor(area / squareArea)
-  const totalPossibleSquares = possibleSquares * 2
+  const totalPossibleSquares = possibleSquares * 1.5
 
   //   console.log(screenWidth, screenHeight);
   const tileClasses = `h-[75px] min-h-[75px] w-[75px] min-w-[75px] border hover:bg-gray-100 duration-400 z-0 relative transition-colors duration-500 ease-in-out opacity-30`;
@@ -31,7 +31,7 @@ const generateBackgroundTiles = function () {
   let shadedSquares = [];
 
   // Start with 10 random values for shading square
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 30; i++) {
     const preShadedSquareValue = Math.floor(Math.random() * tilesArray.length);
     shadedSquares.push(preShadedSquareValue);
     tilesArray[preShadedSquareValue].classList.add("bg-gray-400");
@@ -50,7 +50,7 @@ const generateBackgroundTiles = function () {
     const randomValue = findUnshadedTile();
     tilesArray[randomValue].classList.add("bg-gray-400");
     shadedSquares.push(randomValue);
-    if (shadedSquares.length > 10) {
+    if (shadedSquares.length > 30) {
       const squareToReset = shadedSquares.shift();
       tilesArray[squareToReset].classList.remove("bg-gray-400");
     }

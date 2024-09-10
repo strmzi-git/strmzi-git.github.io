@@ -13,9 +13,42 @@
       class="flex w-[120%] opacity-50 h-[110%] flex-wrap fixed top-[-25px] left-[-25px] z-0 overflow-hidden"
     ></div>
     <nav id="navbar" class="my-4 mx-auto w-[500px] relative z-20"></nav>
-    <main id="mainContent" class="mx-auto p-8 relative z-20"></main>
+    <!-- The page must contain at least:
+- 2 images
+- 2 paragraphs of text
+- 1 list (ordered or unordered) or table. -->
+    <main id="mainContent" class="mx-auto p-8 relative z-20">
+      <div class="w-[500px] md:w-[700px] mx-auto p-2 bg-white shadow-md rounded-md mb-2">
+        <h3
+          class="bg-gradient-to-r from-yellow-500 to-pink-500 via-red-500 bg-clip-text text-transparent font-black text-center w-fit mx-auto my-6 text-3xl"
+        >
+          Why does ICT suit me?
+        </h3>
+        <div
+          class="flex flex-col md:flex-row gap-8 items-center justify-center p-4"
+        >
+          <img
+            src="./public/images/Code.jpg"
+            alt="Code on screen"
+            height="350"
+            width="350"
+            class="rounded-md"
+          />
+          <div class="flex flex-col gap-2">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+            repellat excepturi ratione praesentium assumenda eum nisi
+            sequi consectetur? Eius, voluptas.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quia officiis iusto
+            reiciendis nemo illum amet nostrum esse neque.
+          </p>
+        </div>
+      </div>
+    </main>
 
-    <!-- <div class="h-[500px] w-[500px] blur-xl rounded-full bg-pink-100 absolute top-50 left-50 transform translate-x-[-50%] translate-y-[-50%]"></div> -->
     <footer id="footerContainer" class="relative z-20"></footer>
 
     <!-- ---------- Javascript scripts ---------- -->

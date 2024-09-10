@@ -8,7 +8,13 @@ module.exports = {
     "blog.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      transitionProperty: {
+        'height': 'height',
+        'max-height': 'max-height',
+        'opacity': 'opacity'
+      },
+    },
   },
   safelist: [
     "text-xl",
@@ -23,6 +29,7 @@ module.exports = {
     "text-6xl",
     "w-[250px]",
     "h-[2px]",
+    "h-[50px]",
     "bg-gradient-to-r",
     "from-pink-500",
     "via-red-500",
@@ -77,7 +84,22 @@ module.exports = {
     "duration-500",
     "ease-in-out",
     "opacity-30",
-    "bg-gray-400"
+    "bg-gray-400",
+    "justify-between",
+    "transition",
+    "h-[0px]",
+    "h-auto",
+    "transition-height",
+    "opacity-0",
+    "opacity-1",
+    "pl-4",
+    "translate-x-[16px]",
+    "max-w-[550px]",
+    "w-[550px]",
+    "rotate-[90deg]",
+    "text-green-400",
+    "text-pink-500",
+    "font-black"
   ],
   plugins: [],
 };
