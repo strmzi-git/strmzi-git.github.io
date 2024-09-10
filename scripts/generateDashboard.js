@@ -1,3 +1,7 @@
+const createElement = document.createElement.bind(document);
+const createTextNode = document.createTextNode.bind(document);
+const getElementById = document.getElementById.bind(document);
+
 const dashboardContent = [
   {
     courseTitle: "Program- & Career Orientation",
@@ -195,28 +199,99 @@ const dashboardContent = [
 
 const generateDashboardUi = function () {
   // Container
-  const mainContent = document.getElementById("mainContent");
+  const mainContent = getElementById("mainContent");
 
   // Total credit section
   let totalCreditsEarned = 0;
   let totalCreditsAvailable = 0;
   for (const course of dashboardContent) {
     const { totalCredits, earnedCredits } = course;
-      totalCreditsAvailable += totalCredits;
-      totalCreditsEarned += earnedCredits;
-
+    totalCreditsAvailable += totalCredits;
+    totalCreditsEarned += earnedCredits;
   }
   // Create credit section
-  const progressbar = document.getElementById("progressbar");
+  const progressbar = getElementById("progressbar");
   // Calculate progressbar positioning
-  const progress =
-    (totalCreditsEarned / totalCreditsAvailable) * 100+ "%";
+  const progress = (totalCreditsEarned / totalCreditsAvailable) * 100 + "%";
   progressbar.style.width = progress;
   // Put credits on page
-  const earnedSelector = document.getElementById("creditsEarned");
-  const availableSelector = document.getElementById("creditsAvailable");
+  const earnedSelector = getElementById("creditsEarned");
+  const availableSelector = getElementById("creditsAvailable");
   earnedSelector.textContent = totalCreditsEarned;
   availableSelector.textContent = totalCreditsAvailable;
+
+  for (const course of dashboardContent) {
+    // Create table
+    const table = createElement("table");
+    const tableStyles =
+      "border-collapse mx-auto border-[2px] my-4 w-[600px] table-fixed";
+    table.classList.add(...tableStyles.split(" "));
+    const head = createElement("thead");
+    const headRow = createElement("tr");
+    const headCell = createElement("th");
+    headCell.classList.add("p-2");
+    headCell.setAttribute("colspan", "4");
+
+    // Header
+    const textNode = createTextNode(course.courseTitle);
+    const textElement = createElement("p");
+    const textStyles = "font-light text-xl";
+    textElement.classList.add(...textStyles.split(" "));
+    textElement.appendChild(textNode);
+
+    // Append to head
+    mainContent.appendChild(table);
+    table.appendChild(head);
+    head.appendChild(headRow);
+    headRow.appendChild(headCell);
+    headCell.appendChild(textElement);
+
+    // Create credits row
+    const secondRow = createElement("tr");
+    const col1Credits = createTableCell("Available Credits");
+    const col2Credits = createTableCell(course.totalCredits);
+    const col3Credits = createTableCell("Credits Earned");
+    const col4Credits = createTableCell(course.earnedCredits);
+
+    [col1Credits, col2Credits, col3Credits, col4Credits].forEach((column) =>
+      secondRow.appendChild(column)
+    );
+
+    const thirdRow = createElement("tr");
+    const colType = createTableCell("Type");
+    const colWeighting = createTableCell("Weighting");
+    const colCompleted = createTableCell("Completed");
+    const colGrade = createTableCell("Grade");
+
+    [colType, colWeighting, colCompleted, colGrade].forEach((col) =>
+      thirdRow.appendChild(col)
+    );
+
+    table.appendChild(secondRow);
+    table.appendChild(thirdRow);
+
+    // Loop over exams and make row for each
+    for (const gradedMaterial of course.gradedMaterial) {
+      const examRow = createElement("tr");
+      const type = createTableCell(gradedMaterial.type);
+      const weighting = createTableCell(gradedMaterial.weighting);
+      const completed = createTableCell(gradedMaterial.completed);
+      const grade = createTableCell(gradedMaterial.grade);
+
+      [type, weighting, completed, grade].forEach((col) => examRow.appendChild(col))
+      table.appendChild(examRow)
+    }
+  }
 };
+
+function createTableCell(content) {
+  const col = createElement("td");
+  const colP = createElement("p");
+  colP.classList.add("text-center", "p-2", "border");
+  const colText = createTextNode(content);
+  col.appendChild(colP);
+  colP.appendChild(colText);
+  return col;
+}
 
 generateDashboardUi();

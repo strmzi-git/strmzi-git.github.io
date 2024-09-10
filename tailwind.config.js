@@ -100,6 +100,12 @@ module.exports = {
     "text-green-400",
     "text-pink-500",
     "font-black",
+    "border-[2px]",
+    "border-collapse",
+    "table-fixed",
+    "col-span-4",
+    "border",
+    "p-1"
   ],
   plugins: [],
 };
