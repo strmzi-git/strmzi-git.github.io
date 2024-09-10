@@ -99,7 +99,7 @@ module.exports = {
     "rotate-[90deg]",
     "text-green-400",
     "text-pink-500",
-    "font-black"
+    "font-black",
   ],
   plugins: [],
 };
