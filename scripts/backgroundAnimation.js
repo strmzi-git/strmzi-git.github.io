@@ -54,7 +54,7 @@ const generateBackgroundTiles = function () {
       const squareToReset = shadedSquares.shift();
       tilesArray[squareToReset].classList.remove("bg-gray-400");
     }
-  }, 1000);
+  }, 500);
 };
 
 generateBackgroundTiles();
