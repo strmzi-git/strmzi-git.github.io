@@ -105,7 +105,14 @@ module.exports = {
     "table-fixed",
     "col-span-4",
     "border",
-    "p-1"
+    "p-1",
+    "min-h-[50px]",
+    "items-stretch",
+    "align-top",
+    "bg-rose-200",
+    "bg-green-200",
+    "text-green-600",
+    "text-rose-600"
   ],
   plugins: [],
 };

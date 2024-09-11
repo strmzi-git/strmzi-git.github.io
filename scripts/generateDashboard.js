@@ -6,12 +6,12 @@ const dashboardContent = [
   {
     courseTitle: "Program- & Career Orientation",
     totalCredits: 2.5,
-    earnedCredits: 0,
+    earnedCredits: 18,
     gradedMaterial: [
       {
         type: "Individual Presentation",
         weighting: "100%",
-        completed: false,
+        completed: true,
         grade: "-",
       },
     ],
@@ -273,21 +273,51 @@ const generateDashboardUi = function () {
     // Loop over exams and make row for each
     for (const gradedMaterial of course.gradedMaterial) {
       const examRow = createElement("tr");
-      const type = createTableCell(gradedMaterial.type);
-      const weighting = createTableCell(gradedMaterial.weighting);
-      const completed = createTableCell(gradedMaterial.completed);
-      const grade = createTableCell(gradedMaterial.grade);
 
-      [type, weighting, completed, grade].forEach((col) => examRow.appendChild(col))
-      table.appendChild(examRow)
+      examRow.classList.add(
+        ...`align-top ${
+          gradedMaterial.completed ? "bg-green-200" : "bg-rose-200"
+        }`.split(" ")
+      );
+      const type = createTableCell(
+        gradedMaterial.type,
+        gradedMaterial.completed,
+        true
+      );
+      const weighting = createTableCell(
+        gradedMaterial.weighting,
+        gradedMaterial.completed,
+        true
+      );
+      const completed = createTableCell(
+        gradedMaterial.completed,
+        gradedMaterial.completed,
+        true
+      );
+      const grade = createTableCell(
+        gradedMaterial.grade,
+        gradedMaterial.completed,
+        true
+      );
+
+      [type, weighting, completed, grade].forEach((col) =>
+        examRow.appendChild(col)
+      );
+      table.appendChild(examRow);
     }
   }
 };
 
-function createTableCell(content) {
+function createTableCell(content, isCompleted, changeColor = false) {
   const col = createElement("td");
+  col.classList.add("min-h-[50px]", "flex-1", "border");
   const colP = createElement("p");
-  colP.classList.add("text-center", "p-2", "border");
+  colP.classList.add(
+    ...`text-center p-2 flex items-center justify-center ${
+      changeColor && (isCompleted ? "text-green-600" : "text-rose-600")
+    }`.split(" ")
+  );
+
   const colText = createTextNode(content);
   col.appendChild(colP);
   colP.appendChild(colText);
