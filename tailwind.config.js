@@ -112,7 +112,9 @@ module.exports = {
     "bg-rose-200",
     "bg-green-200",
     "text-green-600",
-    "text-rose-600"
+    "text-rose-600",
+    "bg-orange-200",
+    "text-orange-600"
   ],
   plugins: [],
 };

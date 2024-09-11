@@ -6,12 +6,13 @@ const dashboardContent = [
   {
     courseTitle: "Program- & Career Orientation",
     totalCredits: 2.5,
-    earnedCredits: 18,
+    earnedCredits: 10,
     gradedMaterial: [
       {
         type: "Individual Presentation",
         weighting: "100%",
-        completed: true,
+        completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -25,6 +26,7 @@ const dashboardContent = [
         type: "Written knowledge test",
         weighting: "100%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -38,6 +40,7 @@ const dashboardContent = [
         type: "Written knowledge test",
         weighting: "100%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -51,12 +54,14 @@ const dashboardContent = [
         type: "Individual Presentation",
         weighting: "50%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
       {
         type: "Written knowledge test",
         weighting: "50%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -70,18 +75,21 @@ const dashboardContent = [
         type: "Group Presentation",
         weighting: "25%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
       {
         type: "Portfolio",
         weighting: "25%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
       {
         type: "Portfolio",
         weighting: "50%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -95,6 +103,7 @@ const dashboardContent = [
         type: "Portfolio",
         weighting: "100%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -108,6 +117,7 @@ const dashboardContent = [
         type: "Portfolio",
         weighting: "100%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -121,6 +131,7 @@ const dashboardContent = [
         type: "Portfolio",
         weighting: "100%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -134,6 +145,7 @@ const dashboardContent = [
         type: "Portfolio",
         weighting: "100%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -147,6 +159,7 @@ const dashboardContent = [
         type: "Criterion-referenced assessment",
         weighting: "100%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -160,24 +173,28 @@ const dashboardContent = [
         type: "Written knowledge test",
         weighting: "40%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
       {
         type: "Written knowledge test",
         weighting: "10%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
       {
         type: "Group presentation",
         weighting: "25%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
       {
         type: "Portfolio",
         weighting: "25%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
@@ -191,11 +208,21 @@ const dashboardContent = [
         type: "Individual Assignment",
         weighting: "100%",
         completed: false,
+        retakeNecessary: false,
         grade: "-",
       },
     ],
   },
 ];
+
+const determineColor = function (retake, completed, type, shade) {
+  const color = !retake
+    ? completed
+      ? `${type}-green-${shade}`
+      : `${type}-orange-${shade}`
+    : `${type}-rose-${shade}`;
+  return color;
+};
 
 const generateDashboardUi = function () {
   // Container
@@ -230,7 +257,8 @@ const generateDashboardUi = function () {
     const headRow = createElement("tr");
     const headCell = createElement("th");
     headCell.classList.add("p-2");
-    headCell.setAttribute("colspan", "4");
+    headCell.setAttribute("colspan", "5");
+    // headCell.setAttribute("rowspan", "1");
 
     // Header
     const textNode = createTextNode(course.courseTitle);
@@ -247,74 +275,92 @@ const generateDashboardUi = function () {
     headCell.appendChild(textElement);
 
     // Create credits row
-    const secondRow = createElement("tr");
+    const creditsRow1 = createElement("tr");
+    const creditsRow2 = createElement("tr");
     const col1Credits = createTableCell("Available Credits");
-    const col2Credits = createTableCell(course.totalCredits);
+    col1Credits.setAttribute("colspan", 3)
     const col3Credits = createTableCell("Credits Earned");
+    col3Credits.setAttribute("colspan", 2)
+    const col2Credits = createTableCell(course.totalCredits);
+    col2Credits.classList.add("font-black")
+    col2Credits.setAttribute("colspan", 3)
     const col4Credits = createTableCell(course.earnedCredits);
+    col4Credits.classList.add("font-black")
+    col4Credits.setAttribute("colspan", 2);
 
-    [col1Credits, col2Credits, col3Credits, col4Credits].forEach((column) =>
-      secondRow.appendChild(column)
-    );
+    [col1Credits, col3Credits].forEach((col) => creditsRow1.appendChild(col));
+    [col2Credits, col4Credits].forEach((col) => creditsRow2.appendChild(col));
 
     const thirdRow = createElement("tr");
     const colType = createTableCell("Type");
     const colWeighting = createTableCell("Weighting");
     const colCompleted = createTableCell("Completed");
+    const colRetake = createTableCell("Retake Required?");
     const colGrade = createTableCell("Grade");
 
-    [colType, colWeighting, colCompleted, colGrade].forEach((col) =>
+    [colType, colWeighting, colCompleted, colRetake, colGrade].forEach((col) =>
       thirdRow.appendChild(col)
     );
 
-    table.appendChild(secondRow);
+    table.appendChild(creditsRow1);
+    table.appendChild(creditsRow2);
     table.appendChild(thirdRow);
 
     // Loop over exams and make row for each
     for (const gradedMaterial of course.gradedMaterial) {
+      const { retakeNecessary, type, completed, weighting, grade } =
+        gradedMaterial;
       const examRow = createElement("tr");
 
       examRow.classList.add(
-        ...`align-top ${
-          gradedMaterial.completed ? "bg-green-200" : "bg-rose-200"
-        }`.split(" ")
+        ...`align-top ${determineColor(
+          retakeNecessary,
+          completed,
+          "bg",
+          "200"
+        )}`.split(" ")
       );
-      const type = createTableCell(
-        gradedMaterial.type,
-        gradedMaterial.completed,
+      const typeCell = createTableCell(type, retakeNecessary, completed, true);
+      const weightingCell = createTableCell(
+        weighting,
+        retakeNecessary,
+        completed,
         true
       );
-      const weighting = createTableCell(
-        gradedMaterial.weighting,
-        gradedMaterial.completed,
+      const completedCell = createTableCell(
+        completed,
+        retakeNecessary,
+        completed,
         true
       );
-      const completed = createTableCell(
-        gradedMaterial.completed,
-        gradedMaterial.completed,
+      const retakeCell = createTableCell(
+        retakeNecessary,
+        retakeNecessary,
+        completed,
         true
       );
-      const grade = createTableCell(
-        gradedMaterial.grade,
-        gradedMaterial.completed,
+      const gradeCell = createTableCell(
+        grade,
+        retakeNecessary,
+        completed,
         true
       );
 
-      [type, weighting, completed, grade].forEach((col) =>
-        examRow.appendChild(col)
+      [typeCell, weightingCell, completedCell, retakeCell, gradeCell].forEach(
+        (col) => examRow.appendChild(col)
       );
       table.appendChild(examRow);
     }
   }
 };
 
-function createTableCell(content, isCompleted, changeColor = false) {
+function createTableCell(content, retake, isCompleted, handleColor = false) {
   const col = createElement("td");
   col.classList.add("min-h-[50px]", "flex-1", "border");
   const colP = createElement("p");
   colP.classList.add(
     ...`text-center p-2 flex items-center justify-center ${
-      changeColor && (isCompleted ? "text-green-600" : "text-rose-600")
+      handleColor && determineColor(retake, isCompleted, "text", "600")
     }`.split(" ")
   );
 
