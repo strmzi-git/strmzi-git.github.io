@@ -66,6 +66,7 @@ module.exports = {
     "h-full",
     "group-hover:left-[0]",
     "duration-300",
+    "duration-700",
     "z-50",
     "group-hover",
     "flex",
@@ -73,6 +74,7 @@ module.exports = {
     "gap-4",
     "justify-center",
     "h-[75px]",
+    "h-[65px]",
     "w-[75px]",
     "bg-black",
     "border",
@@ -114,7 +116,13 @@ module.exports = {
     "text-green-600",
     "text-rose-600",
     "bg-orange-200",
-    "text-orange-600"
+    "text-orange-600",
+    "max-h-[0px]",
+    "max-h-[500px]",
+    "z-50",
+    "relative",
+    "z-0",
+    "transition-max-height"
   ],
   plugins: [],
 };

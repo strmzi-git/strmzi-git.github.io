@@ -707,6 +707,10 @@ video {
   height: 50px;
 }
 
+.h-\[65px\] {
+  height: 65px;
+}
+
 .h-\[75px\] {
   height: 75px;
 }
@@ -721,6 +725,14 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.max-h-\[0px\] {
+  max-height: 0px;
+}
+
+.max-h-\[500px\] {
+  max-height: 500px;
 }
 
 .min-h-\[50px\] {
@@ -768,12 +780,12 @@ video {
   max-width: 550px;
 }
 
-.max-w-\[700px\] {
-  max-width: 700px;
-}
-
 .max-w-\[650px\] {
   max-width: 650px;
+}
+
+.max-w-\[700px\] {
+  max-width: 700px;
 }
 
 .table-fixed {
@@ -1090,21 +1102,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-green-200 {
-  --tw-text-opacity: 1;
-  color: rgb(187 247 208 / var(--tw-text-opacity));
-}
-
-.text-orange-200 {
-  --tw-text-opacity: 1;
-  color: rgb(254 215 170 / var(--tw-text-opacity));
-}
-
-.text-rose-200 {
-  --tw-text-opacity: 1;
-  color: rgb(254 205 211 / var(--tw-text-opacity));
-}
-
 .opacity-0 {
   opacity: 0;
 }
@@ -1147,12 +1144,22 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-max-height {
+  transition-property: max-height;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-300 {
   transition-duration: 300ms;
 }
 
 .duration-500 {
   transition-duration: 500ms;
+}
+
+.duration-700 {
+  transition-duration: 700ms;
 }
 
 .ease-in-out {
