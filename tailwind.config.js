@@ -6,13 +6,18 @@ module.exports = {
     "dashboard.html",
     "faq.html",
     "blog.html",
+    "blog/field-of-work.html",
+    "blog/personal-swot-analysis.html",
+    "blog/programming-experience.html",
+    "blog/study-choice.html",
   ],
   theme: {
     extend: {
       transitionProperty: {
-        'height': 'height',
-        'max-height': 'max-height',
-        'opacity': 'opacity'
+        height: "height",
+        width: "width",
+        "max-height": "max-height",
+        opacity: "opacity",
       },
     },
   },
@@ -122,7 +127,22 @@ module.exports = {
     "z-50",
     "relative",
     "z-0",
-    "transition-max-height"
+    "transition-max-height",
+    "hover:translate-y-[-5px]",
+    "hover:scale-[0.99]",
+    "duration-200",
+    "w-[200px]",
+    "bg-green-500",
+    "absolute",
+    "top-0",
+    "left-0",
+    "z-[60]",
+    "top-6",
+    "left-6",
+    "w-[35px]",
+    "h-[35px]",
+    "backdrop-blur-md",
+    "shadow-lg"
   ],
   plugins: [],
 };

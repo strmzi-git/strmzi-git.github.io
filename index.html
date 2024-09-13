@@ -12,39 +12,43 @@
       id="mainContainer"
       class="flex w-[120%] opacity-50 h-[110%] flex-wrap fixed top-[-25px] left-[-25px] z-0 overflow-hidden"
     ></div>
-    <nav id="navbar" class="my-4 mx-auto w-[500px] relative z-20"></nav>
-    <!-- The page must contain at least:
-- 2 images
-- 2 paragraphs of text
-- 1 list (ordered or unordered) or table. -->
-    <main id="mainContent" class="mx-auto p-8 relative z-20">
-      <div class="w-[500px] md:w-[700px] mx-auto p-2 bg-white shadow-md rounded-md mb-2">
+    <nav id="navbar" class="my-4 mx-auto w-[500px]"></nav>
+
+    <main id="mainContent" class="mx-auto p-8 z-20">
+      <div
+        class="w-[500px] md:w-[700px] mx-auto p-2 bg-white shadow-md rounded-md mb-2"
+      >
         <h3
           class="bg-gradient-to-r from-yellow-500 to-pink-500 via-red-500 bg-clip-text text-transparent font-black text-center w-fit mx-auto my-6 text-3xl"
         >
-          Why does ICT suit me?
+          Why did I choose ICT?
         </h3>
         <div
           class="flex flex-col md:flex-row gap-8 items-center justify-center p-4"
         >
-          <img
+          <!-- <img
             src="./public/images/Code.jpg"
             alt="Code on screen"
             height="350"
             width="350"
             class="rounded-md"
-          />
+          /> -->
           <div class="flex flex-col gap-2">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
-            repellat excepturi ratione praesentium assumenda eum nisi
-            sequi consectetur? Eius, voluptas.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Quia officiis iusto
-            reiciendis nemo illum amet nostrum esse neque.
-          </p>
+            <p>
+              I believe ICT is a good fit for me simply because I'm interested
+              in the following tech-related fields:
+            </p>
+            <ul>
+              <li class="flex items-center gap-2"><ion-icon name="arrow-forward-outline"></ion-icon> Web development</li>
+              <li class="flex items-center gap-2"><ion-icon name="arrow-forward-outline"></ion-icon> Game development</li>
+              <li class="flex items-center gap-2"><ion-icon name="arrow-forward-outline"></ion-icon> AI & ML</li>
+              <li class="flex items-center gap-2"><ion-icon name="arrow-forward-outline"></ion-icon> Cybersecurity</li>
+            </ul>
+            <p>Fortunately, the ICT program at HZ covers all those topics to some extent. </p>
+
+            <p>Furthermore, i'm a big fan of the approach to teaching/learning at HZ. Since I took a gap year and did all my learning by myself, i've learned to learn without any third-party intervention which I think is going to be a valuable skill in the next 4 years at HZ.</p>
+           
+          </div>
         </div>
       </div>
     </main>
@@ -52,6 +56,8 @@
     <footer id="footerContainer" class="relative z-20"></footer>
 
     <!-- ---------- Javascript scripts ---------- -->
+    <!-- Sidebar script -->
+    <script src="./scripts/generateSidebar.js"></script>
     <!-- Footer script -->
     <script src="./scripts/loadFooter.js"></script>
     <!-- Navbar script -->

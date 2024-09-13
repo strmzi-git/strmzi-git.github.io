@@ -6,10 +6,10 @@
     <meta charset="UTF-8" />
     <meta name="description" content="Best website in the world" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Timo's About Page</title>
+    <title>Timo Storny - About</title>
     <!-- tailwindcss output file -->
     <link href="../public/dist/output.css" rel="stylesheet" />
-    <meta name="description" content="Timo's profile page" />
+    <meta name="description" content="Timo Storny - About Page" />
     <script
       src="https://kit.fontawesome.com/056a0464c9.js"
       crossorigin="anonymous"
@@ -20,51 +20,75 @@
     />
   </head>
   <body>
-    <div id="mainContainer" class="flex w-[120%] opacity-50 h-[110%] flex-wrap fixed top-[-25px] left-[-25px] z-0 overflow-hidden"></div>
+    <div
+      id="mainContainer"
+      class="flex w-[120%] opacity-50 h-[110%] flex-wrap fixed top-[-25px] left-[-25px] z-0 overflow-hidden"
+    ></div>
     <!-- Navigation bar -->
     <nav id="navbar" class="my-4 mx-auto w-[500px]"></nav>
-    <main id="mainContent" class="mx-auto p-8 relative z-20">
-      <!-- Header container -->
-      <div class="flex flex-col items-center gap-4 mb-4">
-        <div
-          class="bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
-        >
-          <h1 class="text-transparent text-6xl font-black text-center">
-            Get To Know Timo
-          </h1>
-        </div>
-      </div>
-      <!-- image and information container -->
-      <img
-        class="w-[250px] h-[250px] rounded-full mx-auto mb-4"
-        src="./public/images/Profile.png"
-        alt="Digital profile artwork"
-      />
+    <main id="mainContent" class="mx-auto p-8 z-20">
       <div
-        class="p-2 max-w-[700px] bg-gradient-to-r from-yellow-500 to-pink-500 via-red-500 mx-auto rounded-md"
+        class="mx-auto p-8 relative z-20 flex flex-col item-start max-w-[650px]"
       >
-        <!-- Container for Q&A question -->
+        <!-- Header container -->
+        <div class="flex flex-col items-center gap-4 mb-4">
+          <div
+            class="bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
+          >
+            <h1 class="text-transparent text-6xl font-black text-center">
+              Get To Know Timo
+            </h1>
+          </div>
+        </div>
+        <!-- image and information container -->
+        <img
+          class="w-[250px] h-[250px] rounded-md mx-auto mb-4"
+          src="./public/images/Profile.png"
+          alt="Digital profile artwork"
+        />
         <div
-          id="content-container"
-          class="max-w-[700px] rounded-md flex flex-col gap-4 p-4 bg-white"
+          class="p-2 max-w-[700px] bg-gradient-to-r from-yellow-500 to-pink-500 via-red-500 mx-auto rounded-md"
         >
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Exercitationem, qui ratione. Non esse vel architecto hic iure, sed
-            sequi in corrupti exercitationem explicabo officiis error fugiat
-            totam perferendis praesentium animi!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quas
-            et, labore dicta quod nisi ab quae magni ipsa, rerum mollitia modi.
-            Unde harum quis corporis quaerat cum ut minima.
-          </p>
-          <!-- <h3 class="font-bold text-xl mt-2">Characteristics</h3>
+          <!-- Container for Q&A question -->
+          <div
+            id="content-container"
+            class="max-w-[700px] rounded-md flex flex-col gap-4 p-4 bg-white"
+          >
+            <p>
+              Despite having chosen a program that involves a lot of programming
+              I wouldn't actually consider programming to be a big passion of
+              mine. I do, however, enjoy building something from the ground up
+              which, fortunately, programming allows me to do since a programmer
+              can technically build whatever they want, given the right skillset
+              and an adequate timeframe.
+            </p>
+            <p>
+              I think there is more to life than simply picking a career and
+              going all in to make a living, have a family and then enjoy
+              retirement. I've got a lot of interests in all kinds of domains
+              that i've yet to explore. To name a few:
+            </p>
+            <ul>
+              <li>Biology</li>
+              <li>Neuroscience</li>
+              <li>Psychology</li>
+              <li>Space exploration</li>
+              <li>History</li>
+              <li>Philosophy</li>
+              <li>Artificial Intelligence</li>
+            </ul>
+            <p>
+              I chose ICT because out of all of these I believe being a
+              programmer is going to give me the best chance at having the most
+              amount of free time to explore whatever domain I want.
+            </p>
+            <!-- <h3 class="font-bold text-xl mt-2">Characteristics</h3>
           <ul class="list-none">
             <li>Handsome</li>
             <li>Muscular</li>
             <li>Intelligent</li>
           </ul> -->
+          </div>
         </div>
       </div>
     </main>
@@ -72,7 +96,9 @@
     <!-- Page footer -->
     <footer id="footerContainer"></footer>
 
-  <!-- ---------- Javascript scripts ---------- -->
+    <!-- ---------- Javascript scripts ---------- -->
+    <!-- Sidebar script -->
+    <script src="./scripts/generateSidebar.js"></script>
     <!-- Footer script -->
     <script src="./scripts/loadFooter.js"></script>
     <!-- Navbar script -->
@@ -88,6 +114,5 @@
     ></script>
     <!-- background animation scripts -->
     <script src="./scripts/backgroundAnimation.js"></script>
-
   </body>
 </html>

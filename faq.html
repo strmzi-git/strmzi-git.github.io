@@ -3,20 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Timo's FAQ page</title>
-    <link rel="stylesheet" href="./public/dist/output.css" />
+    <title>Timo Storny - FAQ </title>
+    <link rel="stylesheet" href="./public/dist/output.css"/>
+    <meta name="description" content="Timo Storny - FAQ Page">
   </head>
   <body class="h-screen">
     <div
       id="mainContainer"
       class="flex w-[120%] opacity-50 h-[110%] flex-wrap fixed top-[-25px] left-[-25px] z-0 overflow-hidden"
     ></div>
-    <nav id="navbar" class="my-4 mx-auto w-[500px] relative z-20"></nav>
-    <main id="mainContent" class="mx-auto p-8 relative z-20 gap-4 flex flex-col items-center "></main>
+    <nav id="navbar" class="my-4 mx-auto w-[500px]"></nav>
+
+    <main id="mainContent" class="mx-auto p-8 z-20">
+      <div
+      id="innerContainer"
+        class="mx-auto p-8 relative gap-4 z-20 flex flex-col item-start max-w-[650px]"
+      >
+      </div>
 
     <footer id="footerContainer"></footer>
 
     <!-- ---------- Javascript scripts ---------- -->
+    <!-- Sidebar script -->
+    <script src="./scripts/generateSidebar.js"></script>
     <!-- Render FAQ script -->
     <script src="./scripts/loadFaq.js"></script>
     <!-- Footer script -->

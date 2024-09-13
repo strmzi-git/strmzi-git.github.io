@@ -19,6 +19,16 @@ const renderNavbar = function () {
     const ulClasslist = "flex items-center gap-4 justify-center";
     ul.classList.add(...ulClasslist.split(" "));
 
+    // Aside menu opener
+    // const asideIconContainer = document.createElement("div")
+    // asideIconContainer.classList.add(..."absolute top-[50%] transform translate-y-[-50%] left-0".split(" "))
+    // const icon = document.createElement("ion-icon")
+    // icon.setAttribute("name", "menu-outline")
+    // asideIconContainer.classList.add(..."transform scale-[1.5] cursor-pointer".split(" "))
+    // asideIconContainer.appendChild(icon)
+
+    // navbarContainer.appendChild(asideIconContainer)
+
     // Create list elements
     const liElementArray = navbarEls.map(({ name, path }, key) => {
       const inactiveLiClasslist =

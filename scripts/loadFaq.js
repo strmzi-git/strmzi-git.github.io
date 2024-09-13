@@ -44,7 +44,7 @@ const faqContent = [
 const generateFAQSection = function () {
   for (let i = 0; i < faqContent.length; i++) {
     const accordionContainer = document.createElement("div");
-    const containerElement = document.getElementById("mainContent");
+    const containerElement = document.getElementById("innerContainer");
     const accordionStyles =
       "max-w-[550px] w-[550px] flex items-center justify-center cursor-pointer flex-col relative z-50";
     accordionContainer.classList.add(...accordionStyles.split(" "));
