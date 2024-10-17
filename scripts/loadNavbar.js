@@ -69,6 +69,7 @@ const renderNavbar = function () {
       ul.appendChild(el);
     }
   });
+
 };
 
 renderNavbar();

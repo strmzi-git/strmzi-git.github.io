@@ -10,6 +10,22 @@ const blogPostContent = [
     url: "field-of-work.html",
     description: "Learn about my unconventional 'plan' for the future.",
   },
+  {
+    title: "SWOT Analysis ",
+    url: "swot-analysis.html",
+    description: "My SWOT analysis from learn.hy",
+  },
+  {
+    title: "ICT Field of work",
+    url: "line-of-work.html",
+    description: "Potential career paths in the ICT line of work.",
+  },
+  {
+    title: "Round 1 feedback",
+    url: "feedback.html",
+    description:
+      "View the feedback I received from the first round of feedback.",
+  },
 ];
 
 const renderAllBlogPosts = function () {

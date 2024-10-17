@@ -6,7 +6,7 @@ const dashboardContent = [
   {
     courseTitle: "Program- & Career Orientation",
     totalCredits: 2.5,
-    earnedCredits: 10,
+    earnedCredits: 0,
     gradedMaterial: [
       {
         type: "Individual Presentation",

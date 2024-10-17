@@ -7,13 +7,13 @@ const generateBackgroundTiles = function () {
 
   const screenHeight = window.innerHeight;
   const screenWidth = window.innerWidth;
-  500, 100;
+  // 500, 100;
 
   // Figure out how many boxes we can fit on the page
   const area = screenHeight * screenWidth;
   const squareArea = 75 * 75;
   const possibleSquares = Math.floor(area / squareArea)
-  const totalPossibleSquares = possibleSquares * 1.5
+  const totalPossibleSquares = possibleSquares
 
   //   console.log(screenWidth, screenHeight);
   const tileClasses = `h-[75px] min-h-[75px] w-[75px] min-w-[75px] border hover:bg-gray-100 duration-400 z-0 relative transition-colors duration-500 ease-in-out opacity-30`;
